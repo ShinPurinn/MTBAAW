@@ -1,7 +1,32 @@
-[gd_scene load_steps=2 format=3 uid="uid://b6lpxa0dyngve"]
+[gd_scene load_steps=9 format=3 uid="uid://b6lpxa0dyngve"]
+
+[ext_resource type="Script" uid="uid://crf2b66ag4f4j" path="res://scenes/menus/main_menu/main_menu.gd" id="1_gm7d7"]
+[ext_resource type="Texture2D" uid="uid://dpln7g42upcsx" path="res://assets/main_menu/main_menu_bg.png" id="1_kx65a"]
+[ext_resource type="FontFile" uid="uid://cfdn5mxddj5t0" path="res://assets/fonts/FantasyDraft.ttf" id="2_flk2s"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_flk2s"]
+texture = ExtResource("1_kx65a")
+modulate_color = Color(0.509286, 0.509286, 0.509286, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_flk2s"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gm7d7"]
+bg_color = Color(0.470596, 0.103155, 0.106678, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_peecx"]
+bg_color = Color(0.580392, 0.137255, 0.141176, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aykwt"]
-bg_color = Color(0.0862745, 0.294118, 0.572549, 1)
+bg_color = Color(0.580475, 0.137701, 0.14204, 1)
 corner_radius_top_left = 16
 corner_radius_top_right = 16
 corner_radius_bottom_right = 16
@@ -14,10 +39,43 @@ shadow_offset = Vector2(0, 3)
 layout_mode = 3
 anchor_right = 1.11111
 anchor_bottom = 1.11111
-offset_bottom = -6.10352e-05
+offset_right = -142.222
+offset_bottom = -79.9992
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_gm7d7")
 metadata/_edit_use_anchors_ = true
+
+[node name="MainBG" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_flk2s")
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -339.5
+offset_top = -279.0
+offset_right = 339.5
+offset_bottom = -110.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 8
+theme_override_fonts/font = ExtResource("2_flk2s")
+theme_override_font_sizes/font_size = 60
+text = "Me & The Boys:
+Adventure in Another World"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Main" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -27,9 +85,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -76.5
-offset_top = -125.0
+offset_top = -20.9996
 offset_right = 76.5
-offset_bottom = 125.0
+offset_bottom = 229.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 10
@@ -37,31 +95,64 @@ theme_override_constants/separation = 10
 [node name="Start" type="Button" parent="Main"]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 40
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_flk2s")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_flk2s")
+theme_override_styles/hover = SubResource("StyleBoxFlat_gm7d7")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_peecx")
 theme_override_styles/normal = SubResource("StyleBoxFlat_aykwt")
 text = "Start"
 
 [node name="Load" type="Button" parent="Main"]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 40
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_flk2s")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_flk2s")
+theme_override_styles/hover = SubResource("StyleBoxFlat_gm7d7")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_peecx")
 theme_override_styles/normal = SubResource("StyleBoxFlat_aykwt")
 text = "Load"
 
 [node name="Options" type="Button" parent="Main"]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 40
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_flk2s")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_flk2s")
+theme_override_styles/hover = SubResource("StyleBoxFlat_gm7d7")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_peecx")
 theme_override_styles/normal = SubResource("StyleBoxFlat_aykwt")
 text = "Options"
 
 [node name="Exit" type="Button" parent="Main"]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 40
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_flk2s")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_flk2s")
+theme_override_styles/hover = SubResource("StyleBoxFlat_gm7d7")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_peecx")
 theme_override_styles/normal = SubResource("StyleBoxFlat_aykwt")
 text = "Exit"
+
+[connection signal="pressed" from="Main/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Main/Load" to="." method="_on_load_pressed"]
+[connection signal="pressed" from="Main/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="Main/Exit" to="." method="_on_exit_pressed"]
