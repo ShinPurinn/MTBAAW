@@ -25,5 +25,4 @@ project/assembly_name="Me & The Boys- Adventure in Another World"
 
 [rendering]
 
-renderer/rendering_method="gl_compatibility"
-renderer/rendering_method.mobile="gl_compatibility"
+renderer/rendering_method="mobile"
