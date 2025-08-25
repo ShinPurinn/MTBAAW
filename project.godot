@@ -16,13 +16,16 @@ config/icon="res://icon.svg"
 
 [display]
 
-window/size/viewport_width=1280
-window/size/viewport_height=720
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/size/mode=2
+window/size/borderless=true
 
 [dotnet]
 
 project/assembly_name="Me & The Boys- Adventure in Another World"
 
-[rendering]
+[physics]
 
-renderer/rendering_method="mobile"
+2d/run_on_separate_thread=true
+3d/run_on_separate_thread=true
